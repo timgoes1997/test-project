@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying...'
+                echo 'Deploying!!...'
                 sh 'gradle build'
                 sh 'java -jar build/libs/ArtifactId-1.0-SNAPSHOT.jar'
                 echo 'Finished deploying.'
