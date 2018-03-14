@@ -11,6 +11,9 @@ public class App {
         System.out.println("Test print");
         System.out.println("Test print");
         System.out.println("Test print");
+        for (int i = 0; i < 100; i++) {
+            System.out.println("Testing!!!!");
+        }
     }
 
     /*
