@@ -1,9 +1,5 @@
-FROM gradle:4.2.1-jdk8-alpine
-WORKDIR /app
-COPY --from=0 /home/eddy/test-projec /app
-
-USER root                # This changes default user to root
-RUN chown -R gradle /app # This changes ownership of folder
-USER gradle              # This changes the user back to the default user "gradle"
-
-RUN ./gradlew build --stacktrace
+FROM gradle:4.3-jdk-alpine
+ADD --chown=gradle . /test-project
+WORKDIR /test-project
+CMD ["gradle", "--stacktrace", "build"]
+CMD ["java", "-jar", "build/libs/ArtifactId-1.0-SNAPSHOT.jar"]
