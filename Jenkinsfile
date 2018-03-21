@@ -7,10 +7,7 @@ pipeline {
                 echo 'Starting build phase...'
 
                 echo 'Building build docker image...'
-                sh 'docker build -t test-project-tag:latest .'
-
-                echo 'Running build image...'
-                sh 'docker run test-project-tag'
+                sh 'docker build -t test-project-tag:latest . && docker run test-project-tag'
 
                 echo '... fishished build phase.'
             }
