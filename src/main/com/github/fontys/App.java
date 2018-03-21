@@ -10,6 +10,7 @@ public class App {
         //    System.out.println("This was run from the main(String args[]) method inside App.java!");
             System.out.println("Another print!");
             System.out.println("One more!");
+            System.out.println("More prints!");
         }
     }
 
