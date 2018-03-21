@@ -1,0 +1,5 @@
+--> Run jenkins build
+--> Open http://localhost:9000/
+--> Login: admin/admin
+--> Create access token
+--> Copy access token, paste into 'analyze-project.sh' --> login=<token>
