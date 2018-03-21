@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Starting deploy phase...'
 
-                sh 'remove-old-sonarqube-server.sh'
+                sh './remove-old-sonarqube-server.sh'
                 sh 'docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube'
 
                 echo '... fishished deploy phase.'
