@@ -6,13 +6,8 @@ package com.github.fontys;
  */
 public class App {
     public static void main(String args[]) {
-        System.out.println("Test print");
-        System.out.println("Test print");
-        System.out.println("Test print");
-        System.out.println("Test print");
-        System.out.println("Test print");
-        for (int i = 0; i < 100; i++) {
-            System.out.println("Testing!!!!");
+        for (int i = 0; i < 25; i++) {
+            System.out.println("This was run from the main(String args[]) method inside App.java!");
         }
     }
 

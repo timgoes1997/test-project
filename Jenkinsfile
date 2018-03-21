@@ -4,23 +4,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Starting build...'
                 sh 'gradle build'
-                sh 'java -jar build/libs/ArtifactId-1.0-SNAPSHOT.jar'
-                echo 'Finished building...'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
+                echo 'end build.'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying!!...'
-                sh 'gradle build'
+                echo 'Starting deploy...'
                 sh 'java -jar build/libs/ArtifactId-1.0-SNAPSHOT.jar'
-                echo 'Cleanup.'
+                echo 'end deploy.'
             }
         }
     }
