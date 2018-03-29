@@ -8,7 +8,7 @@ public class App {
     public static void main(String args[]) {
         for (int i = 0; i < 5; i++) {
         //    System.out.println("This was run from the main(String args[]) method inside App.java!");
-            System.out.println("Just a print!");
+            System.out.println("Just a print, but better!!");
         }
     }
 
