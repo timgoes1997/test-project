@@ -1,3 +1,5 @@
+### todo; clean up this file format to be markdown readable. looks good in vim, not in markdown.
+
 --> Run jenkins build
 --> Open http://localhost:9000/
 --> Login: admin/admin
