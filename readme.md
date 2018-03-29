@@ -25,7 +25,24 @@ username: admin
 password: password
 
 // Publish jar
-curl -uadmin:password -T build/libs/* "http://localhost:8081/artifactory/generic-local/test-project-latest.jar"
+
 
 // Retrieve jar
-curl -uadmin:password -O "http://localhost:8081/artifactory/generic-local/test-project-latest.jar"
+
+
+
+
+
+Complete build-to-deploy overview (code analysis yet to be implemented):
+
+// This instantiates a new docker container based on a newly created image, with gradle included. At the end of the gradle build, copies generated jar back into <rootprojectdir>/build/docker-build-output/<jarname>.jar
+bash rebuild-and-run-build.sh
+
+// This publishes the jar file to Artifactory under the name 'test-project-latest.jar'. Version control to be implemented here, this is just a sample project.
+curl -uadmin:APtWBKequi4kSpAYtCbS4WFsK7 -T build/docker-build-output/* "http://localhost:8081/artifactory/generic-local/test-project-latest.jar"
+
+// This retrieves the latest jar file from Artifactory. Here again, this is actually useless to do as a whole, but I'm just demonstrating the use of the Artifactory CLI interface here.
+curl -uadmin:APtWBKequi4kSpAYtCbS4WFsK7 -O "http://localhost:8081/artifactory/generic-local/test-project-latest.jar"
+
+// This instantiates a new docker container based on a newly created image, with the JRE software on it. It copies the retrieved jar file from Artifactory into the container, running it there.
+bash rebuild-and-run-deploy.sh
