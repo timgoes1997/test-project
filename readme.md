@@ -19,12 +19,13 @@ docker run --name artifactory-container-name -d -v ~/artifactory-data:/var/opt/j
 // Stop and remove a running container
 docker stop artifactory-container-name; and docker rm artifactory-container-name
 
-// Run interactively
 docker run --name artifactory-container-name -it --entrypoint=/bin/bash -v ~/artifactory-data:/var/opt/jfrog/artifactory -p 8081:8018 docker.bintray.io/jfrog/artifactory-oss:latest
 
 username: admin
 password: password
 
-// Run 'gradle artifactoryDeploy' to deploy to artifactory
-// Run 'gradle artifactoryPublish' to publish to artifactory
-// Difference? idk, find out.
+// Publish jar
+curl -uadmin:password -T build/libs/* "http://localhost:8081/artifactory/generic-local/test-project-latest.jar"
+
+// Retrieve jar
+curl -uadmin:password -O "http://localhost:8081/artifactory/generic-local/test-project-latest.jar"

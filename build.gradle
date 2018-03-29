@@ -1,27 +1,9 @@
-// Artifactory plugins
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
-    }
-}
-
-plugins {
-    id "org.sonarqube" version "2.6"
-}
-
-apply plugin: 'com.jfrog.artifactory'
-apply plugin: 'maven-publish'
 apply plugin: 'java'
 
-group 'GroupId'
-version '1.0-SNAPSHOT'
+group 'com.github.edwinvanrooij'
+version '1.1.0'
 
 sourceCompatibility = 1.8
-
-
 
 repositories {
     mavenCentral()
@@ -47,41 +29,5 @@ sourceSets {
         java {
             srcDirs = ['src/test']
         }
-    }
-}
-
-
-
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
-
-artifactory {
-    contextUrl = 'http://localhost:8081/artifactory'
-    publish {
-        repository {
-            repoKey = 'libs-snapshot-local' // The Artifactory repository key to publish to
-            username = "${artifactory_user}" // The publisher user name
-            password = "${artifactory_password}" // The publisher password
-        }
-        defaults {
-            // Reference to Gradle publications defined in the build script.
-            // This is how we tell the Artifactory Plugin which artifacts should be
-            // published to Artifactory.
-            publications('mavenJava')
-            publishArtifacts = true
-            // Properties to be attached to the published artifacts.
-            properties = ['qa.level': 'basic', 'dev.team' : 'core']
-            // Publish generated POM files to Artifactory (true by default)
-            publishPom = true
-        }
-    }
-    resolve {
-        repoKey = 'jcenter'
     }
 }
