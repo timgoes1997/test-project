@@ -2,6 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Prerequisities') {
+            steps {
+                echo 'Starting prerequisities phase...'
+
+		sh 'git pull'
+
+                echo '... fishished prerequisities phase.'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Starting build phase...'
