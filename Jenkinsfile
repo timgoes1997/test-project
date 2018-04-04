@@ -15,10 +15,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Starting deploy phase...'
-
-                sh './remove-old-sonarqube-server.sh'
-                sh 'docker run -d --name sonarqube -p 9000:9000 -p 9092:9092 sonarqube'
+		sh 'gradle artifactoryPublish'
 
                 echo '... fishished deploy phase.'
             }

@@ -5,4 +5,5 @@ docker rmi build-name
 
 docker build -t build-image -f Dockerfile-build .
 docker run --name build-name build-image
-docker cp build-name:/test-project/build/libs/ build/docker-build-output
+mkdir -p build/libs
+docker cp build-name:/test-project/build/libs/ build/libs
