@@ -66,6 +66,21 @@ artifactory {
     }
 }
 
+cargo {
+    containerId = 'glassfish5x'
+    port = 8180
+
+    deployable {
+        file = war.archivePath
+    }
+    
+    remote {
+        hostname = 'localhost'
+        username = 'admin'
+        password = 'b8155100'
+    }
+}
+
 
 jar {
     manifest {
