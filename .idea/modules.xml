@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ArtifactId.iml" filepath="$PROJECT_DIR$/.idea/modules/ArtifactId.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ArtifactId_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ArtifactId_main.iml" group="ArtifactId" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ArtifactId_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ArtifactId_test.iml" group="ArtifactId" />
+      <module fileurl="file://$PROJECT_DIR$/test-project.iml" filepath="$PROJECT_DIR$/test-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test-project_main.iml" filepath="$PROJECT_DIR$/.idea/modules/test-project_main.iml" group="test-project" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test-project_test.iml" filepath="$PROJECT_DIR$/.idea/modules/test-project_test.iml" group="test-project" />
     </modules>
   </component>
 </project>
