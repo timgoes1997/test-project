@@ -16,9 +16,13 @@ version = currentVersion
 apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
+apply plugin: 'com.bmuschko.cargo'
 
 dependencies {
     testCompile 'junit:junit:4.7'
+    def cargoVersion = '1.4.5'
+    cargo "org.codehaus.cargo:cargo-core-uberjar:$cargoVersion",
+          "org.codehaus.cargo:cargo-ant:$cargoVersion"
 }
 
 publishing {
