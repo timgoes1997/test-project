@@ -16,4 +16,4 @@ CURRENT_VERSION=$(getProperty "currentVersion")
 URL="http://localhost:8081/artifactory/libs-snapshot-local/test-project/$CURRENT_VERSION/test-project-$CURRENT_VERSION.jar"
 echo $URL
 
-curl -u admin:password "http://localhost:8081/artifactory/libs-snapshot-local/test-project/$CURRENT_VERSION/test-project-$CURRENT_VERSION.jar" --output build/libs/test-project-$CURRENT_VERSION.jar
+curl -u admin:password "http://localhost:8081/artifactory/libs-snapshot-local/test-project/$CURRENT_VERSION/test-project-$CURRENT_VERSION.jar" --output build/libs/test-project-latest.jar

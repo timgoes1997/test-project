@@ -6,16 +6,37 @@ pipeline {
             steps {
                 echo 'Starting build phase...'
 
-                echo 'Building build docker image...'
-                sh 'docker build -t test-project-tag:latest . && docker run test-project-tag'
+                echo 'bash rebuild-and-run-build.sh'
 
                 echo '... fishished build phase.'
             }
         }
 
+        stage('Publish') {
+            steps {
+                echo 'Starting publish phase...'
+
+                echo 'gradle artifactoryPublish'
+
+                echo '... fishished publish phase.'
+            }
+        }
+
+        stage('Retrieval') {
+            steps {
+                echo 'Starting retrieval phase...'
+
+                echo 'bash get-latest-artifact.sh'
+
+                echo '... fishished retrieval phase.'
+            }
+        }
+
         stage('Deploy') {
             steps {
-		sh 'gradle artifactoryPublish'
+                echo 'Starting deploy phase...'
+
+		sh 'bash rebuild-and-run-deploy.sh'
 
                 echo '... fishished deploy phase.'
             }

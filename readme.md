@@ -7,7 +7,7 @@ docker run --name artifactory-container-name -d -v ~/artifactory-data:/var/opt/j
 
 --> bash rebuild-and-run-build.sh
 --> gradle artifactoryPublish
---> retrieve 
+--> bash get-latest-artifact.sh
 --> bash rebuild-and-run-deploy.sh
 
 # Notes:

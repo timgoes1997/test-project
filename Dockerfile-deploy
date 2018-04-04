@@ -1,4 +1,4 @@
 FROM anapsix/alpine-java
 MAINTAINER edwin 
-COPY ./test-project-latest.jar /test-project-latest.jar
+COPY ./build/libs/test-project-latest.jar /test-project-latest.jar
 CMD ["java","-jar","/test-project-latest.jar"]
