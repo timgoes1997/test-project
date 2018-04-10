@@ -34,7 +34,7 @@ dependencies {
 }
 
 cargo {
-    containerId = 'glassfish5x'
+    containerId = 'glassfish4x'
     port = 8180
 
     deployable {
