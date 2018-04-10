@@ -4,7 +4,7 @@ buildscript {
     }
     dependencies {
         classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
-        classpath 'com.bmuschko:gradle-cargo-plugin:2.2.3'
+        classpath 'com.bmuschko:gradle-cargo-plugin:2.3'
     }
 }
 
@@ -29,8 +29,8 @@ dependencies {
     compile "org.glassfish.jersey.inject:jersey-hk2:2.26"
     compile group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.7.1'
 
-    cargo "org.codehaus.cargo:cargo-core-uberjar:1.5.0",
-            "org.codehaus.cargo:cargo-ant:1.5.0"
+    cargo "org.codehaus.cargo:cargo-core-uberjar:1.6.6",
+            "org.codehaus.cargo:cargo-ant:1.6.6"
 }
 
 cargo {
