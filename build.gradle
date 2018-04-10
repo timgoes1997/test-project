@@ -71,7 +71,7 @@ cargo {
     port = 8180
 
     deployable {
-        file = war.archivePath
+        context = 'MyAwesomeWebApp'
     }
     
     remote {
