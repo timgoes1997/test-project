@@ -66,23 +66,6 @@ artifactory {
     }
 }
 
-cargo {
-    containerId = 'glassfish5x'
-    port = 8180
-
-    deployable {
-        context = 'MyAwesomeWebApp'
-    }
-    
-    remote {
-        hostname = 'localhost'
-        username = 'admin'
-        password = '0abc2e6a'
-        //rmiport = 4849
-    }
-}
-
-
 jar {
     manifest {
         attributes 'Main-Class': 'com.github.fontys.App'
@@ -108,3 +91,39 @@ sourceSets {
         }
     }
 }
+
+class RemoteContainer {
+    String name
+    String hostname
+    Integer port
+    String username
+    String password
+}
+
+def remoteContainers = [new RemoteContainer(name: 'glassfish5', hostname: 'localhost',
+                                port: 8180, username: 'admin', password: '0abc2e6a')]
+
+apply plugin: 'com.bmuschko.cargo-base'
+
+remoteContainers.each { config ->
+    task "deployRemote${config.name.capitalize()}"(type: com.bmuschko.gradle.cargo.tasks.remote.CargoDeployRemote) {
+        description = "Deploys WAR to remote Glassfish5 '${config.name}'."
+        containerId = 'glassfish5x'
+        hostname = config.hostname
+        port = config.port
+        username = config.username
+        password = config.password
+    }
+}
+
+task deployToAllRemoteGlassFishes{
+    dependsOn remoteContainers.collect { "deployRemote${it.name.capitalize()}" }
+    description = 'Deploys to all remote GlassFish containers.'
+    group = 'deployment'
+}
+
+
+
+
+
+
