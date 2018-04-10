@@ -91,6 +91,11 @@ sourceSets {
     }
 }
 
+task createDevelopmentWar(type: War, dependsOn: classes) {
+    archiveName "webapi-test.war"
+    destinationDir = file("$buildDir/dist")
+}
+
 class RemoteContainer {
     String name
     String container
@@ -122,6 +127,7 @@ remoteContainers.each { config ->
         username = config.username
         password = config.password
         context = "webapi"
+        dependsOn = [createDevelopmentWar]
     }
 }
 
@@ -130,7 +136,6 @@ task deployToAllRemoteGlassFishes{
     description = 'Deploys to all remote GlassFish containers.'
     group = 'deployment'
 }
-
 
 
 
