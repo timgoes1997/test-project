@@ -77,7 +77,7 @@ cargo {
     remote {
         hostname = 'localhost'
         username = 'admin'
-        password = 'b8155100'
+        password = '0abc2e6a'
         //rmiport = 4849
     }
 }
