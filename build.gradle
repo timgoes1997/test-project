@@ -4,7 +4,7 @@ buildscript {
     }
     dependencies {
         classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
-        classpath 'com.bmuschko:gradle-cargo-plugin:2.3'
+        classpath 'com.bmuschko:gradle-cargo-plugin:2.2.3'
     }
 }
 
@@ -17,6 +17,7 @@ version = currentVersion
 apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
+apply plugin: 'com.bmuschko.cargo'
 
 dependencies {
     testCompile "junit:junit:4.12"
@@ -27,9 +28,23 @@ dependencies {
     compile "org.glassfish.jersey.inject:jersey-hk2:2.26"
     compile group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.7.1'
 
-    //def cargoVersion = '1.4.5'
-    //cargo "org.codehaus.cargo:cargo-core-uberjar:$cargoVersion",
-          //"org.codehaus.cargo:cargo-ant:$cargoVersion"
+    cargo "org.codehaus.cargo:cargo-core-uberjar:1.5.0",
+            "org.codehaus.cargo:cargo-ant:1.5.0"
+}
+
+cargo {
+    containerId = 'glassfish5x'
+    port = 8180
+
+    deployable {
+        context = 'MyContext'
+    }
+
+    remote {
+        hostname = 'localhost'
+        username = 'admin'
+        password = '0abc2e6a'
+    }
 }
 
 publishing {
@@ -91,6 +106,7 @@ sourceSets {
     }
 }
 
+/*
 task createDevelopmentWar(type: War, dependsOn: classes) {
     archiveName "webapi-test.war"
     destinationDir = file("$buildDir/dist")
@@ -136,7 +152,7 @@ task deployToAllRemoteGlassFishes{
     description = 'Deploys to all remote GlassFish containers.'
     group = 'deployment'
 }
-
+*/
 
 
 
