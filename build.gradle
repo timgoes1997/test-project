@@ -94,25 +94,35 @@ sourceSets {
 
 class RemoteContainer {
     String name
+    String container
     String hostname
     Integer port
     String username
     String password
+    String purpose
 }
 
-def remoteContainers = [new RemoteContainer(name: 'glassfish5', hostname: 'localhost',
-                                port: 8180, username: 'admin', password: '0abc2e6a')]
+def remoteContainers = [new RemoteContainer(
+        name: 'glassfish5',
+        container: 'glassfish5x',
+        hostname: 'localhost',
+        port: 8180,
+        username: 'admin',
+        password: '0abc2e6a',
+        purpose: 'development'
+)]
 
 apply plugin: 'com.bmuschko.cargo-base'
 
 remoteContainers.each { config ->
     task "deployRemote${config.name.capitalize()}"(type: com.bmuschko.gradle.cargo.tasks.remote.CargoDeployRemote) {
         description = "Deploys WAR to remote Glassfish5 '${config.name}'."
-        containerId = 'glassfish5x'
+        containerId = config.container
         hostname = config.hostname
         port = config.port
         username = config.username
         password = config.password
+        context = "webapi"
     }
 }
 
