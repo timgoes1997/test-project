@@ -33,6 +33,13 @@
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-config:2.5.0-b44" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-core:2.5.0-b61" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:auto-depends:2.0.5" />
+          <element id="library" level="project" name="Gradle: org.glassfish.deployment:deployment-common:10.0-b28" />
+          <element id="library" level="project" name="Gradle: org.glassfish.admin:cli-framework:10.0-b28" />
+          <element id="library" level="project" name="Gradle: org.glassfish.admin:launcher:10.0-b28" />
+          <element id="library" level="project" name="Gradle: org.glassfish.common:internal-api:10.0-b28" />
+          <element id="library" level="project" name="Gradle: org.glassfish.admin:config-api:10.0-b28" />
+          <element id="library" level="project" name="Gradle: org.glassfish.common:common-util:10.0-b28" />
+          <element id="library" level="project" name="Gradle: org.glassfish.common:glassfish-api:10.0.422" />
           <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.6.0" />
           <element id="library" level="project" name="Gradle: org.glassfish.jersey.core:jersey-common:2.26" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-runlevel:2.5.0-b44" />
@@ -42,43 +49,36 @@
           <element id="library" level="project" name="Gradle: org.hibernate:hibernate-validator:5.2.4.Final" />
           <element id="library" level="project" name="Gradle: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Gradle: org.glassfish:javax.json:1.0.4" />
-          <element id="library" level="project" name="Gradle: org.glassfish.admin:cli-framework:10.0-b28" />
-          <element id="library" level="project" name="Gradle: org.glassfish.admin:launcher:10.0-b28" />
           <element id="library" level="project" name="Gradle: org.glassfish.core:glassfish:10.0-b28" />
-          <element id="library" level="project" name="Gradle: org.glassfish.admin:config-api:10.0-b28" />
-          <element id="library" level="project" name="Gradle: org.glassfish.common:common-util:10.0-b28" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-api:2.5.0-b61" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:hk2-utils:2.5.0-b61" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:javax.inject:2.5.0-b61" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:class-model:2.5.0-b44" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:asm-all-repackaged:2.5.0-b44" />
+          <element id="library" level="project" name="Gradle: com.sun.enterprise:hk2:0.3.31" />
           <element id="library" level="project" name="Gradle: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Gradle: javax.ws.rs:javax.ws.rs-api:2.1" />
           <element id="library" level="project" name="Gradle: javax.annotation:javax.annotation-api:1.2" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2:osgi-resource-locator:1.0.1" />
-          <element id="library" level="project" name="Gradle: org.glassfish.common:glassfish-api:10.0.422" />
-          <element id="library" level="project" name="Gradle: com.sun.enterprise:hk2:0.3.31" />
           <element id="library" level="project" name="Gradle: com.sun.enterprise:hk2-core:0.3.31" />
           <element id="library" level="project" name="Gradle: org.glassfish:javax.xml.stream:10.0-b28" />
           <element id="library" level="project" name="Gradle: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Gradle: org.glassfish.main.common:scattered-archive-api:5.0" />
           <element id="library" level="project" name="Gradle: org.glassfish.external:management-api:3.2.1-b002" />
+          <element id="library" level="project" name="Gradle: org.glassfish.external:grizzly-module:10.0-b28" />
           <element id="library" level="project" name="Gradle: com.sun.enterprise:config:0.3.31" />
-          <element id="library" level="project" name="Gradle: com.sun.enterprise:auto-depends:0.3.31" />
           <element id="library" level="project" name="Gradle: org.glassfish.grizzly:grizzly-portunif:2.4.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.grizzly:grizzly-http2:2.4.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.grizzly:grizzly-http-server:2.4.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.grizzly:grizzly-http:2.4.1" />
           <element id="library" level="project" name="Gradle: org.glassfish.grizzly:grizzly-framework:2.4.1" />
+          <element id="library" level="project" name="Gradle: com.sun.enterprise:auto-depends:0.3.31" />
           <element id="library" level="project" name="Gradle: com.sun.enterprise:tiger-types-osgi:0.3.31" />
           <element id="library" level="project" name="Gradle: org.jvnet:tiger-types:1.4" />
           <element id="library" level="project" name="Gradle: org.jboss.logging:jboss-logging:3.2.1.Final" />
           <element id="library" level="project" name="Gradle: com.fasterxml:classmate:1.1.0" />
           <element id="library" level="project" name="Gradle: org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b61" />
           <element id="library" level="project" name="Gradle: org.javassist:javassist:3.22.0-CR2" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.deployment/deployment-common/10.0-b28/fa9544277bc0b53e9c267a7ae5b3c2e5db6e4199/deployment-common-10.0-b28.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.common/internal-api/10.0-b28/9daf00c701c3a918187ffe62d4764743a8146462/internal-api-10.0-b28.jar" />
-          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.external/grizzly-module/10.0-b28/bc5cd485367a07dc94b078aee985c05a7a1dfe3/grizzly-module-10.0-b28.jar" />
         </element>
       </element>
     </root>
